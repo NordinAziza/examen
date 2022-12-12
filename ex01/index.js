@@ -8,14 +8,14 @@ class Vehicule {
   
     // Méthode pour afficher les détails du véhicule
     afficherDetails() {
-      console.log(`Marque : ${marque}`);
-      console.log(`Modèle : ${modele}`);
-      console.log(`Vitesse maximale : ${vitesseMax}`);
+      console.log(`Marque : ${this.marque}`);
+      console.log(`Modèle : ${this.modele}`);
+      console.log(`Vitesse maximale : ${this.vitesseMax}`);
     }
   
     // Méthode pour mettre à jour la vitesse maximale
     mettreAJourVitesseMax(nouvelleVitesseMax) {
-      this.nouvelleVitesseMax = vitesseMax;
+      this.vitesseMax = nouvelleVitesseMax;
     }
   }
 
