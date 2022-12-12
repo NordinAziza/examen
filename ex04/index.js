@@ -7,6 +7,7 @@ class DataFetcher {
     try {
       const response = await fetch(this.apiUrl);
       const data = await response.json();
+      
       return data;
     } catch (error) {
       throw error;
@@ -21,9 +22,22 @@ class DataRenderer {
 
   renderData() {
     //duplicate node
-    const dataContainer = document.querySelector('#character_card').cloneNode(true);
-    dataContainer.querySelector(".Card__name").innerText = "POURQUOI CA NE MARCHE PAS?";
+    let character=this.data.results[0]
+    const dataContainer = document.querySelector('#character_card');
+    dataContainer.querySelector(".Card__name").innerText=character.name;
     document.querySelector(".CharactersList").appendChild(dataContainer);
+    document.querySelector(".Card__image").src=character.image
+    document.querySelector(".Card__text").innerText=character.species
+    document.querySelector(".location").innerText=character.location.name
+    document.querySelector(".origin").innerText=character.origin.name
+
+    character.episode.forEach(element => {
+      let episode=document.createElement("li")
+      episode.innerText=element
+      document.querySelector(".episode").appendChild(episode)
+    });
+
+    
   }
 }
 
