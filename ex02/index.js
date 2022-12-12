@@ -24,7 +24,7 @@ class Moto extends Vehicule {
   // Constructeur
   constructor(marque,modele, vitesseMax, nombreDeRoues) {
     // Appeler le constructeur parent
-    Vehicule.constructor(marque,modele,vitesseMax);
+    super(marque,modele,vitesseMax);
     // Initialiser la propriété spécifique à la moto
     this.nombreDeRoues = nombreDeRoues;
   }
@@ -32,7 +32,7 @@ class Moto extends Vehicule {
   // Méthode pour afficher les détails de la moto
   afficherDetails() {
     // Appeler la méthode afficherDetails() du parent
-    Vehicule.afficherDetails();
+    super.afficherDetails();
     // Afficher la propriété spécifique à la moto
     console.log(`Nombre de roues : ${this.nombreDeRoues}`);
   }
